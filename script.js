@@ -1,19 +1,13 @@
 function moveZeros(arr) {
   let newArr = []
-  arr.sort((a)=>{
-    if(a === 0 && a!==false) {
-      return -1
-    }
+  newArr = arr.filter((item)=>{
+    return item !== 0
   })
-  newArr = arr.filter((item,index)=>{
-    if(item === 0) {
-      console.log(item,index)
-      newArr.push(arr.slice(0,index+1)) 
-      return newArr
-    }
+  let newArr2 = arr.filter((item)=>{
+    return item === 0
   })
-  arr.splice(0,newArr.length)
-  newArr = arr.concat(newArr)
+  let newArr3 = newArr.concat(newArr2)
+  return newArr3
 
 }
 
